@@ -122,98 +122,99 @@
 
 //Задача 38:
 
-// Console.WriteLine("Введите длину массива");
-// bool isNumber = int.TryParse(Console.ReadLine(), out int length);
-// if (!isNumber || length <= 0)
-// {
-//     Console.WriteLine("Invalid number");
-//     return;
-// }
+Console.WriteLine("Введите длину массива");
+bool isNumber = int.TryParse(Console.ReadLine(), out int length);
+if (!isNumber || length <= 0)
+{
+    Console.WriteLine("Invalid number");
+    return;
+}
 
 
-// int[] FillArray(int length)
-// {
-//     int[] array = new int[length];
-//     Random random = new Random();
-//     for (int i = 0; i < length; i++)
-//     {
-//         array[i] = random.Next(-100, 100);
-//     }
-//     return array;
-// }
+double[] FillArray(int length)
+{
+    double[] array = new double[length];
+    Random random = new Random();
+    for (int i = 0; i < length; i++)
+    {
+        array[i] = Math.Round(random.NextDouble(), 3);
+      
+    }
+    return array;
+}
 
-// int[] array = FillArray(length);
-// int max = array[0];
-// int min = array[0];
+double[] array = FillArray(length);
+double max = array[0];
+double min = array[0];
 
-// int Max(int[] array)
-// {
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         if (array[i] > max)
-//         {
-//             max = array[i];
-//         }
-//     }
-//     return max;
-// }
+double Max(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > max)
+        {
+            max = array[i];
+        }
+    }
+    return max;
+}
 
-// int Min(int[] array)
-// {
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         if (array[i] < min)
-//         {
-//             min = array[i];
-//         }
-//     }
-//     return min;
-// }
+double Min(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < min)
+        {
+            min = array[i];
+        }
+    }
+    return min;
+}
 
 
-// int Difference(int min, int max)
-// {
-//     int difference = 0;
-//     if (max < 0 && min < 0)
-//     {
-//     difference = max - min;
-//     return difference;
-//     }
-//     if (min < 0)
-//     {
-//     difference = max + min;
-//     return difference;
-//     }
-//     {
-//     difference = max - min;
-//     return difference; 
-//     }
+double Difference(double min, double max)
+{
+    double difference = 0;
+    if (max < 0 && min < 0)
+    {
+    difference = max - min;
+    return difference;
+    }
+    if (min < 0)
+    {
+    difference = max + min;
+    return difference;
+    }
+    {
+    difference = max - min;
+    return difference; 
+    }
     
      
-// }
+}
 
-// void PrintArray(int[] array, int min, int max,  int difference)
-// {
-//     if (array.Length == 0)
-//     {
-//         Console.WriteLine("Что-то пошло не так");
-//         return;
-//     }
-//     Console.Write("[");
+void PrintArray(double[] array, double min, double max,  double difference)
+{
+    if (array.Length == 0)
+    {
+        Console.WriteLine("Что-то пошло не так");
+        return;
+    }
+    Console.Write("[");
 
-//     for (int i = 0; i < array.Length - 1; i++)
-//     {
-//         Console.Write($"{array[i]},");
-//     }
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        Console.Write($"{array[i]},");
+    }
 
-//     Console.Write(array[array.Length - 1]);
-//     Console.Write("]");
-//     Console.Write(" максимальное -> " + max);
-//     Console.Write(" минимальное-> " + min);
-//     Console.Write(" разница-> " + difference);
-// }
-// Difference(min, max);
-// Min(array);
-// Max(array);
-// PrintArray(array, min, max, Difference(min, max));
-// FillArray(length);
+    Console.Write(array[array.Length - 1]);
+    Console.Write("]");
+    Console.Write(" максимальное -> " + max);
+    Console.Write(" минимальное-> " + min);
+    Console.Write(" разница-> " + Math.Round(difference, 3));
+}
+Difference(min, max);
+Min(array);
+Max(array);
+PrintArray(array, min, max, Difference(min, max));
+FillArray(length);
