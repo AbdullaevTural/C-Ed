@@ -57,32 +57,32 @@
 
 // //Задача 3
 
-// bool isNumber = int.TryParse(Console.ReadLine(), out int N);
-// if(isNumber != true )
-// {
-//     Console.WriteLine("Это не число!");
-//     return;
-// }
+bool isNumber = int.TryParse(Console.ReadLine(), out int N);
+if(isNumber != true )
+{
+    Console.WriteLine("Это не число!");
+    return;
+}
 
 
-//   int[] arrInt = new int[N+1];
-//   double cubeNumber = 0.0;
-//    int cubeNumbers = 0;
-//     for (int i = 0; i < arrInt.Length; i++)
-//     {
-//       cubeNumber = Math.Pow(i,3);
-//       cubeNumbers = Convert.ToInt32(cubeNumber);
-//       arrInt[i] = cubeNumbers;
-//     }
+  int[] arrInt = new int[N+1];
+  double cubeNumber = 0.0;
+   int cubeNumbers = 0;
+    for (int i = 0; i < arrInt.Length; i++)
+    {
+      cubeNumber = Math.Pow(i,3);
+      cubeNumbers = Convert.ToInt32(cubeNumber);
+      arrInt[i] = cubeNumbers;
+    }
     
-// void PrintArray(int[] arrInt)
-// {
-//     for (int i = 1; i < arrInt.Length; i++)
-//     {
-//         Console.Write($"{arrInt[i]}  ");
-//     }
-// }
-// PrintArray(arrInt);
+void PrintArray(int[] arrInt)
+{
+    for (int i = 1; i < arrInt.Length; i++)
+    {
+        Console.Write($"{arrInt[i]}  ");
+    }
+}
+PrintArray(arrInt);
 
 
 
