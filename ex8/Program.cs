@@ -95,7 +95,7 @@
 // PrintArray(mas2);
 // PrintArray(mas);
 // int[,] mas3 = new int[m, n];
-// int[,] MinSumRow(int[,] array1, int[,] array2, int[,] array3)
+// int[,] NewArray(int[,] array1, int[,] array2, int[,] array3)
 // {
 
 
@@ -112,83 +112,80 @@
 //     return array3;
 // }
 
-// MinSumRow(mas, mas2, mas3);
+// NewArray(mas, mas2, mas3);
 // PrintArray(mas3);
 
 // /*Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, 
 // добавляя индексы каждого элемента.*/
 
-// Console.WriteLine("Введите количество строк");
-// int m = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите количество столбцов");
-// int n = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите количество столбцов");
-// int s = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество строк");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов");
+int s = Convert.ToInt32(Console.ReadLine());
 
-// int[,,] mas = new int[m, n, s];
+int[,,] mas = new int[m, n, s];
 
-// void PrintArray(int[,,] ma)
-// {
-//     for (int i = 0; i < mas.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < mas.GetLength(1); j++)
-//         {
-//             for (int k = 0; k < mas.GetLength(1); k++)
-//             {
-//                 Console.Write($"{ma[i, j, k]}({i},{j},{k})  ");
-//             }
-//         }
-//         Console.WriteLine();
-//     }
-//     Console.WriteLine("---------------------------");
-// }
-// int number = 0;
-// int[,,] FillArray(int[,,] ma, int number )
-// {
+void PrintArray(int[,,] ma)
+{
+    for (int i = 0; i < mas.GetLength(0); i++)
+    {
+        for (int j = 0; j < mas.GetLength(1); j++)
+        {
+            for (int k = 0; k < mas.GetLength(1); k++)
+            {
+                Console.Write($"{ma[i, j, k]}({i},{j},{k})  ");
+            }
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine("---------------------------");
+}
+int number = 0;
+int[,,] FillArray(int[,,] ma, int number )
+{
 
-//     Random rnd = new Random();
-//     for (int i = 0; i < mas.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < mas.GetLength(1); j++)
-//         {
+    Random rnd = new Random();
+    for (int i = 0; i < mas.GetLength(0); i++)
+    {
+        for (int j = 0; j < mas.GetLength(1); j++)
+        {
 
-//             for (int k = 0; k < mas.GetLength(2); k++)
-//             {
-//                  int ms = rnd.Next(10, 20); 
-//                 if (FindElement(ma, ms)==true) {
-//                 ma[i, j, k] = ms;}
-//                 else {
-//                     ms = rnd.Next(10, 20); 
-//                     ma[i, j, k] = ms;
-//                 }
-                  
-              
-//                 Console.WriteLine(FindElement(ma, ms));
-//             }
-//         }
-//     }
-//     return ma;
+            for (int k = 0; k < mas.GetLength(2); k++)
+            {
+                 int ms = rnd.Next(10, 50); 
+                if (FindElement(ma, ms)==true) {
+                ma[i, j, k] = ms;}
+                else {
+                    FillArray(mas, number);            
+                    }
+                Console.WriteLine(FindElement(ma, ms));
+            }
+        }
+    }
+    return ma;
 
-// }
+}
 
-//   bool FindElement(int[,,] array, int el)
-// {
-//     for (int i = 0; i < array.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < array.GetLength(1); j++)
-//         {
-//             for (int k = 0; k < array.GetLength(2); k++)
-//             {
+  bool FindElement(int[,,] array, int el)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
                 
-//                 if (array[i, j, k] == el) return false;
-//             }
-//         }
-//     }
-//     return true;
-// }
+                if (array[i, j, k] == el) return false;
+            }
+        }
+    }
+    return true;
+}
 
-// FillArray(mas, number);
-// PrintArray(mas);
+FillArray(mas, number);
+PrintArray(mas);
 
 
 
@@ -198,6 +195,7 @@
 // Console.WriteLine("Введите количество столбцов и строк");
 // int lenght = Convert.ToInt32(Console.ReadLine());
 // int[,] array = new int[lenght, lenght];
+
 // int[,] Fill2DIntArraySpiral(int lenght, int min)
 
 // {
